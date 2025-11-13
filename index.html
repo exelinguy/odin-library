@@ -6,28 +6,22 @@
     <title>My Library</title>
   </head>
   <body>
-    <section id="library-section">
-      <h2>My Library</h2>
-      <div id="books-list"></div>
-    </section>
+    <div id="library-container"></div>
 
     <template id="book-template">
-      <article class="book-card" role="article">
-        <h3 class="book-title"></h3>
+      <div class="card">
+        <h2 class="book-title"></h2>
         <p class="book-author"></p>
         <p class="book-pages"></p>
-        <div class="book-actions">
-          <button class="toggle-read">Toggle Read</button>
-          <button class="remove-book">Remove</button>
-        </div>
-      </article>
+        <p class="book-read"></p>
+      </div>
     </template>
 
     <button id="new-book">New Book</button>
     <dialog id="book-dialog">
       <form id="new-book-form" method="dialog">
         <label>
-          Title:
+          Title*:
           <input name="title" required />
         </label>
         <label>
