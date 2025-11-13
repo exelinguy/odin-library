@@ -13,7 +13,11 @@
         <h2 class="book-title"></h2>
         <p class="book-author"></p>
         <p class="book-pages"></p>
-        <p class="book-read"></p>
+        <label class="read-label">
+          Read?
+          <input type="checkbox" class="book-read-checkbox" />
+        </label>
+        <button class="remove-btn">Remove</button>
       </div>
     </template>
 
@@ -37,7 +41,9 @@
           <input name="read" type="checkbox" />
         </label>
         <menu>
-          <button value="cancel" formnovalidate>Cancel</button>
+          <button type="button" id="cancel-btn" value="cancel" formnovalidate>
+            Cancel
+          </button>
           <button type="submit">Add</button>
         </menu>
       </form>
