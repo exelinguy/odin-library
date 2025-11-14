@@ -4,6 +4,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: Inter, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 500;
 }
 
 body {
@@ -169,7 +170,7 @@ label {
   display: flex;
   flex-direction: column;
   gap: 5px;
-  font-weight: bold;
+  font-weight: 800;
   color: #34495e;
 }
 
@@ -224,6 +225,12 @@ button[type="submit"] {
   position: relative; /* Keeps the dropdown anchored */
 }
 
+.search-wrapper input {
+  flex: 1;
+  width: auto;
+  min-width: 0;
+}
+
 /* Search Results Dropdown */
 .results-dropdown {
   position: absolute;
@@ -247,4 +254,20 @@ button[type="submit"] {
 
 .result-item:hover {
   background-color: #f8f9fa;
+}
+/* Mobile Adjustments */
+@media (max-width: 600px) {
+  dialog {
+    width: 95vw; /* Use more of the screen width */
+    max-width: 95vw; /* Override the 90vw desktop limit */
+    padding: 1rem; /* Reduce padding by half to save space */
+  }
+  .search-wrapper {
+    flex-wrap: wrap;
+  }
+
+  #search-btn {
+    width: 100%; /* Make button full width if it wraps */
+    margin-top: 5px;
+  }
 }
