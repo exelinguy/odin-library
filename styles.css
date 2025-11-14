@@ -1,0 +1,219 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Inter, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f4f4f9; /* Light gray background */
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  font-family: Caveat, cursive;
+  margin-bottom: 10%;
+}
+
+/* The Header Button */
+#new-book,
+#search-btn {
+  background-color: #2c3e50;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-bottom: 2rem;
+  transition: transform 0.2s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#search-btn {
+  font-size: 0.8rem;
+}
+
+#new-book:hover {
+  transform: translateY(-2px); /* Slight lift effect */
+  background-color: #34495e;
+}
+
+/* THE GRID LAYOUT */
+#library-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px; /* Prevent it from getting too wide on huge screens */
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers everything horizontally */
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* The Book Cover */
+.book-cover {
+  width: 128px;
+  height: 190px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  background-color: #eee; /* Loading state color */
+}
+
+.book-title {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+}
+
+.book-author {
+  font-style: italic;
+  color: #7f8c8d;
+  margin-bottom: 0.5rem;
+}
+
+.book-pages {
+  font-size: 0.9rem;
+  color: #95a5a6;
+  margin-bottom: 1rem;
+}
+
+/* Read Toggle Label */
+.read-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  color: #333;
+  cursor: pointer;
+}
+
+/* Remove Button */
+.remove-btn {
+  background-color: #e74c3c; /* Red */
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%; /* Fill the card width */
+  margin-top: auto; /* Pushes button to the very bottom if card height varies */
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.remove-btn:hover {
+  opacity: 1;
+}
+
+/* The Modal/Dialog */
+dialog {
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  padding: 2rem;
+  width: 400px;
+  max-width: 90vw;
+  margin: auto; /* Built-in centering for dialogs */
+}
+
+/* Dim the background when modal is open */
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* Form Layout */
+#new-book-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-weight: bold;
+  color: #34495e;
+}
+
+input {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+/* Buttons container in form */
+menu {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+button[type="submit"] {
+  background-color: #27ae60; /* Green */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#cancel-btn {
+  background-color: #f47a67;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Search Results Dropdown (Revisiting our previous code) */
+.results-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.result-item {
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+}
+
+.result-item:hover {
+  background-color: #f8f9fa;
+}

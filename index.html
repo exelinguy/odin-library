@@ -3,30 +3,53 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Inter:opsz,wght@14..32,400..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
     <title>My Library</title>
   </head>
   <body>
+    <h1>My Library</h1>
     <div id="library-container"></div>
 
     <template id="book-template">
       <div class="card">
+        <img
+          class="book-cover"
+          src=""
+          alt="Book Cover"
+          style="width: 100px; height: auto; margin-bottom: 10px"
+        />
+
         <h2 class="book-title"></h2>
         <p class="book-author"></p>
         <p class="book-pages"></p>
+
         <label class="read-label">
-          Read?
-          <input type="checkbox" class="book-read-checkbox" />
+          Read? <input type="checkbox" class="book-read-checkbox" />
         </label>
+
         <button class="remove-btn">Remove</button>
       </div>
     </template>
 
-    <button id="new-book">New Book</button>
+    <div class="new-book"><button id="new-book">New Book</button></div>
     <dialog id="book-dialog">
       <form id="new-book-form" method="dialog">
+        <input type="hidden" name="coverUrl" id="cover-url-input" />
         <label>
           Title*:
-          <input name="title" required />
+          <div class="search-wrapper">
+            <input name="title" id="title-input" required autocomplete="off" />
+            <button type="button" id="search-btn">Search</button>
+
+            <div id="search-results" class="results-dropdown"></div>
+          </div>
         </label>
         <label>
           Author:
