@@ -20,8 +20,7 @@ h1 {
 }
 
 /* The Header Button */
-#new-book,
-#search-btn {
+#new-book {
   background-color: #2c3e50;
   color: white;
   padding: 12px 24px;
@@ -35,10 +34,18 @@ h1 {
 }
 
 #search-btn {
-  font-size: 0.8rem;
   flex-shrink: 0;
   white-space: nowrap;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
   margin-bottom: 0;
+  min-width: 100px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 #new-book {
@@ -182,6 +189,13 @@ menu {
   margin-top: 1rem;
 }
 
+menu button {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 button[type="submit"] {
   background-color: #27ae60; /* Green */
   color: white;
@@ -189,15 +203,17 @@ button[type="submit"] {
   padding: 10px 20px;
   border-radius: 4px;
   cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 #cancel-btn {
-  background-color: #f47a67;
+  background-color: rgb(244, 122, 103);
   color: white;
   border: none;
   padding: 10px 20px;
   border-radius: 4px;
   cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .search-wrapper {
