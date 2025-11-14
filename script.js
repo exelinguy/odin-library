@@ -60,14 +60,21 @@ function displayLibrary() {
         saveLocal();
         displayLibrary();
       }
+      //Refresh-notice
+      if (!container.hasChildNodes()) {
+        document.getElementById("refresh-notice").innerText = "Add a book!";
+      }
     });
     container.appendChild(clone);
   }
+  //Refresh-notice
+  if (container.hasChildNodes()) {
+    document.getElementById("refresh-notice").innerText =
+      "Your data is saved. Try refreshing the page :)";
+  }
 }
 
-// // Temporary: Manually add data to test
-// addBookToLibrary("The Hobbit", "J.R.R. Tolkien", 295, false);
-// addBookToLibrary("1984", "George Orwell", 328, true);
+// Load saved data if any
 restoreLocal();
 
 // Initial call
