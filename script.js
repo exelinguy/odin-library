@@ -135,7 +135,8 @@ const DisplayController = (() => {
       container.appendChild(clone);
     }
 
-    refreshNotice.innerText = "Your data is saved. Try refreshing the page :)";
+    refreshNotice.innerText =
+      "Your data is saved on this browser. Try refreshing the page or re-opening the browser :)";
   };
 
   const initEventListeners = () => {
